@@ -13,7 +13,7 @@ ThisBuild / organizationName := "Erik Erlandson"
 ThisBuild / licenses := List(
     "Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.txt")
 )
-ThisBuild / startYear := Some(2022)
+ThisBuild / startYear := Some(2024)
 
 // ci settings
 ThisBuild / tlCiReleaseBranches := Seq("scala3")
