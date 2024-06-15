@@ -6,3 +6,12 @@ hs_err_pid*
 
 # vi swap files
 *.swp
+
+out/*
+target/
+dumps/
+.metals/
+.bsp/
+.bloop/
+metals.sbt
+.vscode
