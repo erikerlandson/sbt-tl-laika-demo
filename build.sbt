@@ -78,9 +78,7 @@ val siteVersions = Versions
         Version("0.2.0-RC1", "0.2.0-RC1").withLabel("release-candidate")
     )
 
-val siteTheme: ThemeProvider = Helium.defaults
-    .site.versions(siteVersions)
-    .build
+val siteTheme: ThemeProvider = Helium.defaults.site.versions(siteVersions).build
 
 lazy val site = project
     .in(file("site"))
