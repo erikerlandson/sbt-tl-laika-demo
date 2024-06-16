@@ -81,7 +81,7 @@ val siteVersions = Versions
 val siteTheme: ThemeProvider = Helium.defaults.site.versions(siteVersions).build
 
 lazy val site = project
-    .in(file("site"))
+    .in(file("docs"))
     .dependsOn(
         core.jvm
     )
