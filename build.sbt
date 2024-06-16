@@ -16,8 +16,8 @@ ThisBuild / licenses := List(
 ThisBuild / startYear := Some(2024)
 
 // ci settings
-ThisBuild / tlCiReleaseBranches := Seq("scala3")
-ThisBuild / tlSitePublishBranch := Some("scala3")
+ThisBuild / tlCiReleaseBranches := Seq("main")
+ThisBuild / tlSitePublishBranch := Some("main")
 // use jdk 17 in ci builds
 ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17"))
 
