@@ -7,6 +7,23 @@ ThisBuild / tlBaseVersion := "0.1"
 
 // publish settings
 // artifacts now publish to s01.oss.sonatype.org, per:
+// https://github.com/erikerlandson/coulomb/issues/500
+//
+// The sonatype publishing depends on 3 github action secrets,
+// which are explained here:
+// https://typelevel.org/sbt-typelevel/secrets.html
+//
+// On linux, you need to give a '-w 0' flag for base64:
+// gpg --list-secret-keys
+// gpg --armor --export-secret-keys $KEY_ID | base64 -w 0
+//
+// my gpg key is the one with the comment:
+// "SBT Sonatype (publish sbt to sonatype)"
+//
+// As of June 2024, you also need to use the "api token"
+// for sonatype, not the legacy user name and password,
+// instructions here:
+// https://typelevel.org/sbt-typelevel/secrets.html#sonatype-credentials
 ThisBuild / developers += tlGitHubDev("erikerlandson", "Erik Erlandson")
 ThisBuild / organization := "com.manyangled"
 ThisBuild / organizationName := "Erik Erlandson"
