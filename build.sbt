@@ -92,13 +92,13 @@ import laika.helium.Helium
 val siteVersions = Versions
     .forCurrentVersion(Version("0.1.0", "0.1.0").setCanonical)
     .withNewerVersions(
-        Version("0.2.0-RC1", "0.2.0-RC1").withLabel("release-candidate")
+        Version("0.2.0-RC1", "0.2.0-RC1").withLabel("RC")
     )
 
 val siteTheme: ThemeProvider = Helium.defaults.site.versions(siteVersions).build
 
 lazy val site = project
-    .in(file("site"))
+    .in(file("docs"))
     .dependsOn(
         core.jvm
     )
