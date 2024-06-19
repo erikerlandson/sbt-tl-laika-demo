@@ -1,5 +1,7 @@
 # Quick Start
 
+Api example code:
+
 ```scala mdoc
 import sbttllaika.Api
 
