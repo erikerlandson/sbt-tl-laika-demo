@@ -1,6 +1,6 @@
 {
   "versions": [
-    { "displayValue": "0.2.0-RC1", "pathSegment": "0.2.0-RC1", "fallbackLink": "/index.html", "label": "release-candidate", "canonical": false },
+    { "displayValue": "0.2.0-RC1", "pathSegment": "0.2.0-RC1", "fallbackLink": "/index.html", "label": "RC", "canonical": false },
     { "displayValue": "0.1.0", "pathSegment": "0.1.0", "fallbackLink": "/index.html", "canonical": true }
   ],
   "linkTargets": [
