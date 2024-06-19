@@ -86,8 +86,6 @@ lazy val unidocs = project
 // sbt site/tlSitePreview
 // http://localhost:4242
 import laika.config.{Version, Versions}
-import laika.theme.ThemeProvider
-import laika.helium.Helium
 
 val siteVersions = Versions
     .forCurrentVersion(Version("0.1.0", "0.1.0").setCanonical)
@@ -95,10 +93,8 @@ val siteVersions = Versions
         Version("0.2.0-RC1", "0.2.0-RC1").withLabel("RC")
     )
 
-val siteTheme: ThemeProvider = Helium.defaults.site.versions(siteVersions).build
-
 lazy val site = project
-    .in(file("site"))
+    .in(file("site")) // actual site files are in 'docs' directory
     .dependsOn(
         core.jvm
     )
@@ -109,7 +105,8 @@ lazy val site = project
         Compile / scalacOptions ~= (_.filterNot { x => x.startsWith("-W") })
     )
     .settings(
-        // laikaTheme := siteTheme
+        // do not try to set laikaTheme directly when using
+        // TypelevelSitePlugin. Modify tlSiteHelium:
         tlSiteHelium := {
             tlSiteHelium.value.site.versions(siteVersions)
         }
