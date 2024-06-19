@@ -3,7 +3,7 @@
 // and check in the updates to github workflow yamls
 
 // base version for assessing MIMA
-ThisBuild / tlBaseVersion := "0.1"
+ThisBuild / tlBaseVersion := "0.2"
 
 // publish settings
 // artifacts now publish to s01.oss.sonatype.org, per:
@@ -88,10 +88,11 @@ lazy val unidocs = project
 import laika.config.{Version, Versions}
 
 val siteVersions = Versions
-    .forCurrentVersion(Version("0.1.0", "0.1.0").setCanonical)
-    .withNewerVersions(
+    .forCurrentVersion(
         Version("0.2.0-RC1", "0.2.0-RC1").withLabel("RC")
     )
+    .withOlderVersions(Version("0.1.0", "0.1.0").setCanonical)
+    .withRenderUnversioned(true)
 
 lazy val site = project
     .in(file("site")) // actual site files are in 'docs' directory
