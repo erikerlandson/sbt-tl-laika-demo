@@ -4,6 +4,6 @@
     { "displayValue": "0.1.0", "pathSegment": "0.1.0", "fallbackLink": "/index.html", "canonical": true }
   ],
   "linkTargets": [
-    
+    { "path": "/quickstart.html", "versions": ["0.1.0"] }
   ]
 }
