@@ -109,5 +109,9 @@ lazy val site = project
         Compile / scalacOptions ~= (_.filterNot { x => x.startsWith("-W") })
     )
     .settings(
-        laikaTheme := siteTheme
+        // laikaTheme := siteTheme
+        tlSiteHelium := {
+            tlSiteHelium.value
+                .site.versions(siteVersions)
+        }
     )
