@@ -111,7 +111,6 @@ lazy val site = project
     .settings(
         // laikaTheme := siteTheme
         tlSiteHelium := {
-            tlSiteHelium.value
-                .site.versions(siteVersions)
+            tlSiteHelium.value.site.versions(siteVersions)
         }
     )
