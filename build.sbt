@@ -92,6 +92,7 @@ val siteVersions = Versions
     .withNewerVersions(
         Version("0.2.0-RC1", "0.2.0-RC1").withLabel("RC")
     )
+    .withRenderUnversioned(true)
 
 lazy val site = project
     .in(file("site")) // actual site files are in 'docs' directory
