@@ -54,7 +54,8 @@ lazy val root = tlCrossRootProject
         core
     )
 
-lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
+// just compile to JVM, since this is a demo
+lazy val core = crossProject(JVMPlatform)
     .crossType(CrossType.Pure)
     .in(file("core"))
     .settings(name := "sbttllaika-core")
