@@ -33,8 +33,7 @@ ThisBuild / licenses := List(
 ThisBuild / startYear := Some(2024)
 
 // ci settings
-ThisBuild / tlCiReleaseBranches := Seq("main")
-ThisBuild / tlSitePublishBranch := Some("main")
+ThisBuild / tlCiReleaseBranches := Seq("main", "dev-0.2")
 // use jdk 17 in ci builds
 ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17"))
 
@@ -87,6 +86,8 @@ lazy val unidocs = project
 // http://localhost:4242
 import laika.config.{Version, Versions}
 
+// keep the publish branch synced with what version branch we're on
+ThisBuild / tlSitePublishBranch := Some("main")
 val siteVersions = Versions
     .forCurrentVersion(Version("0.1.0", "0.1.0").setCanonical)
     .withNewerVersions(
