@@ -51,7 +51,8 @@ ThisBuild / tlFatalWarnings := false
 
 lazy val root = tlCrossRootProject
     .aggregate(
-        core
+        core,
+        unidocs
     )
 
 // just compile to JVM, since this is a demo
@@ -90,9 +91,9 @@ import laika.config.{Version, Versions}
 // keep the publish branch synced with what version branch we're on
 ThisBuild / tlSitePublishBranch := Some("main")
 val siteVersions = Versions
-    .forCurrentVersion(Version("0.1.0", "0.1.0").setCanonical)
+    .forCurrentVersion(Version("0.1.2", "0.1.x").setCanonical)
     .withNewerVersions(
-        Version("0.2.0-RC1", "0.2.0-RC1").withLabel("RC")
+        Version("0.2.0-RC1", "0.2.0-RCx").withLabel("RC")
     )
     .withRenderUnversioned(true)
 
