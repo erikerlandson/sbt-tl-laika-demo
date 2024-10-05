@@ -1,10 +1,10 @@
 {
   "versions": [
-    { "displayValue": "0.2.0-RC1", "pathSegment": "0.2.0-RCx", "fallbackLink": "/index.html", "label": "RC", "canonical": false },
-    { "displayValue": "0.1.2", "pathSegment": "0.1.x", "fallbackLink": "/index.html", "canonical": true }
+    { "displayValue": "0.2.0-RC", "pathSegment": "0.2.0-RC2", "fallbackLink": "/index.html", "label": "dev", "canonical": false },
+    { "displayValue": "0.1.x", "pathSegment": "0.1", "fallbackLink": "/index.html", "canonical": true }
   ],
   "linkTargets": [
-    { "path": "/index.html", "versions": ["0.1.x"] },
-    { "path": "/quickstart.html", "versions": ["0.1.x"] }
+    { "path": "/index.html", "versions": ["0.1"] },
+    { "path": "/quickstart.html", "versions": ["0.1"] }
   ]
 }
