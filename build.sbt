@@ -52,6 +52,7 @@ ThisBuild / tlFatalWarnings := false
 lazy val root = tlCrossRootProject
     .aggregate(
         core,
+        // unidocs needs to be on this list or it will not publish to sonatype
         unidocs
     )
 
@@ -60,17 +61,6 @@ lazy val core = crossProject(JVMPlatform)
     .crossType(CrossType.Pure)
     .in(file("core"))
     .settings(name := "sbttllaika-core")
-
-// a target for rolling up all subproject deps: a convenient
-// way to get a repl that has access to all subprojects
-// sbt all/console
-lazy val all = project
-    .in(file("all")) // sbt will create this - it is unused
-    .dependsOn(
-        core.jvm
-    ) // scala repl only needs JVMPlatform subproj builds
-    .settings(name := "sbttllaika-all")
-    .enablePlugins(NoPublishPlugin) // don't publish
 
 // a published artifact aggregating API docs for viewing at javadoc.io
 // build and view scaladocs locally:
@@ -115,3 +105,14 @@ lazy val site = project
             tlSiteHelium.value.site.versions(siteVersions)
         }
     )
+
+// a target for rolling up all subproject deps: a convenient
+// way to get a repl that has access to all subprojects
+// sbt all/console
+lazy val all = project
+    .in(file("all")) // sbt will create this - it is unused
+    .dependsOn(
+        core.jvm
+    ) // scala repl only needs JVMPlatform subproj builds
+    .settings(name := "sbttllaika-all")
+    .enablePlugins(NoPublishPlugin) // don't publish
