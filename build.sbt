@@ -81,9 +81,9 @@ import laika.config.{Version, Versions}
 // keep the publish branch synced with what version branch we're on
 ThisBuild / tlSitePublishBranch := Some("main")
 val siteVersions = Versions
-    .forCurrentVersion(Version("0.1.2", "0.1.x").setCanonical)
+    .forCurrentVersion(Version("0.1.x", "0.1").setCanonical)
     .withNewerVersions(
-        Version("0.2.0-RC1", "0.2.0-RCx").withLabel("RC")
+        Version("0.2.0-RC", "0.2.0-RC2").withLabel("dev")
     )
     .withRenderUnversioned(true)
 
