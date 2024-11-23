@@ -21,5 +21,7 @@ class Api(t: Int):
 
     def goo(y: Int): Int = y + (2 * t)
 
+    def hoo(z: Int): Int = z + (3 * t)
+
 object Api:
     def apply(t: Int): Api = new Api(t)

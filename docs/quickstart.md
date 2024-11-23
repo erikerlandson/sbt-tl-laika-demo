@@ -10,4 +10,6 @@ val api = Api(1)
 api.foo(1)
 
 api.goo(1)
+
+api.hoo(1)
 ```
