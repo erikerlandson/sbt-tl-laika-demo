@@ -82,7 +82,7 @@ import laika.config.{Version, Versions}
 ThisBuild / tlSitePublishBranch := Some("dev-0.2")
 val siteVersions = Versions
     .forCurrentVersion(
-        Version("0.2.0-RC", "0.2.0-RC2").withLabel("dev")
+        Version("0.2.0-RC3", "0.2.0-RC3").withLabel("dev")
     )
     .withOlderVersions(Version("0.1.x", "0.1").setCanonical)
     // take any unversioned docs from stable version
